@@ -1,0 +1,114 @@
+.authPage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100vh;
+
+  // Ghraphical side of auth page start
+  &__graphic {
+    grid-column: 1/6;
+    background-image: url(/assets/img/icon4Asset6mdpi.png),
+      linear-gradient(180deg, #2c237c, #2c237c);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: $main-padding;
+    overflow: hidden;
+    box-shadow: $box-shadow-big;
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/13;
+      height: 60vh;
+      margin-top: 5rem;
+    }
+    &-logo {
+      img {
+        width: 20rem;
+      }
+    }
+    &-title {
+      color: white;
+      margin-top: 12rem;
+    }
+    &-img {
+      .clouds {
+        margin-top: 5rem;
+        width: 100%;
+        animation: clouds 15s ease infinite;
+      }
+      .drone {
+        width: 30%;
+        animation: drone 6s ease infinite;
+      }
+    }
+  }
+
+  // Form side of auth page start
+  &__form {
+    grid-column: 6/12;
+    color: $text-color-dark;
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/13;
+
+    }
+    &-tab {
+      padding: $main-padding;
+      padding-left: 10rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        padding : 4rem;
+        height: max-content;
+      }
+      .tab-header {
+        align-items: baseline;
+        display: flex;
+        justify-self: flex-start;
+        @media only screen and (max-width: $bp-medium) {
+          justify-content: center;
+        }
+        li {
+          padding: 0.5rem;
+          font-size: 1.6rem;
+          transition: all 0.3s ease;
+          span {
+            font-size: 2.6rem;
+            cursor: pointer;
+          }
+        }
+        .active {
+          color: $primary-color;
+        }
+      }
+      .tab-body{
+        form{
+          margin-top: 5rem;
+
+          .submit{
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            span{
+              padding: 0 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Menu side of auth page start
+  &__menu {
+    grid-column: 12/13;
+    padding: $main-padding;
+    @media only screen and (max-width: $bp-medium) {
+      position: fixed;
+      background: white;
+      right: 0;
+      padding: 2rem;
+      width: 100%;
+    }
+    img{
+      width: 4rem;
+      cursor: pointer;
+    }
+
+  }
+}
